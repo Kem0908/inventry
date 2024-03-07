@@ -15,13 +15,13 @@ class SearchWindow(tk.Frame):
 
     def set_data(self):
         # データ設定
-        pd_list = pd.read_csv("prones/parent_child.csv")
+        pd_list = pd.read_csv("data_file/parent_child.csv")
         self.data = pd_list[["上位品目番号","下位品目番号"]]
 
         # 追加
-        pd_inv = pd.read_csv("prones/output_invent.csv")
+        pd_inv = pd.read_csv("data_file/output_invent.csv")
         self.inv = pd_inv[["品番1","残数","棚番"]]
-        pd_weld = pd.read_csv("prones/re_welding_parts.csv")
+        pd_weld = pd.read_csv("data_file/re_welding_parts.csv")
         self.weld = pd_weld[["品番","棚番","残数"]]
 
         self.colname_list = ["列番号", "品目番号", "残数", "棚番"]  # 検索結果に表示させる列名
